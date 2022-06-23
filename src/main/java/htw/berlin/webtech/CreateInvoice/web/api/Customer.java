@@ -1,22 +1,27 @@
 package htw.berlin.webtech.CreateInvoice.web.api;
 
-public class Person {
+import java.time.LocalDate;
+
+public class Customer {
 
     private long id;
     private String firstName;
     private String lastName;
     private String address;
-    private String birthday;
+    private String state;
+    private LocalDate birthday;
 
-    public Person(long id, String firstName, String lastName, String address, String birthday) {
+    public Customer(long id, String firstName, String lastName, String address, String state, LocalDate birthday) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
+        this.state = state;
         this.birthday = birthday;
     }
 
 
+    LocalDate date = LocalDate.of(1998, 2, 13);
 
 
     public long getId() {
@@ -51,11 +56,19 @@ public class Person {
         this.address = address;
     }
 
-    public String getBirthday() {
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public LocalDate getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(String birthday) {
+    public void setBirthday(LocalDate birthday) {
         this.birthday = birthday;
     }
 }

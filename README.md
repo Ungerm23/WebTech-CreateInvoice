@@ -1,3 +1,5 @@
+[![Deploy](https://github.com/Ungerm23/WebTech-CreateInvoice/actions/workflows/deploy.yml/badge.svg)](https://github.com/Ungerm23/WebTech-CreateInvoice/actions/workflows/deploy.yml)
+
 # WebTech-CreateInvoice
 ## What is this project about? 
 This project is about creating an invoice with different positions/articles for a customer.

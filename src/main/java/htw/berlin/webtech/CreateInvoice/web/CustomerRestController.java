@@ -40,7 +40,7 @@ public class CustomerRestController {
     }
 
     @PutMapping(path = "/api/v1/customers/{id}")
-    public ResponseEntity<Customer> updatePerson(@PathVariable Long id, @RequestBody CustomerManipulationRequest request) {
+    public ResponseEntity<Customer> updateCustomer(@PathVariable Long id, @RequestBody CustomerManipulationRequest request) {
         var customer = customerService.update(id, request);
         return customer != null? ResponseEntity.ok(customer) : ResponseEntity.notFound().build();
     }

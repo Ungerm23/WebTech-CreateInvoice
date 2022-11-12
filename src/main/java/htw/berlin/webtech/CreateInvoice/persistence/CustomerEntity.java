@@ -7,6 +7,7 @@ import java.time.LocalDate;
 public class CustomerEntity {
 
     @Id
+    //sorgt dafür, dass nummerischer Wert erzeugt wird, der um 1 hochzählt, sobald neuer Datensatz hinzugefügt wird
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
@@ -27,6 +28,7 @@ public class CustomerEntity {
     private LocalDate birthday;
 
     public CustomerEntity(String firstName, String lastName, String address, String state, LocalDate birthday) {
+        //ID im Konstruktor nicht notwendig, da diese von Datenbank erzeugt werden soll
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
@@ -34,6 +36,7 @@ public class CustomerEntity {
         this.birthday = birthday;
     }
 
+    //public wäre hier auch möglich, aber nicht notwendig, daher geringste Sichtbarkeit wählen --> protected
     protected CustomerEntity() {}
 
     public Long getId() {

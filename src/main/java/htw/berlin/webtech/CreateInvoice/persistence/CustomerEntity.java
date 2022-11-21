@@ -3,7 +3,7 @@ package htw.berlin.webtech.CreateInvoice.persistence;
 import javax.persistence.*;
 import java.time.LocalDate;
 
-@Entity(name = "Kunden")
+@Entity(name = "customer")
 public class CustomerEntity {
 
     @Id

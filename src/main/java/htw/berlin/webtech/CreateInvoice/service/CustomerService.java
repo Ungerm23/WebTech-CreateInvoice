@@ -26,14 +26,17 @@ public class CustomerService {
     }
 
     public Customer findById(Long id) {
-        var customerEntity = customerRepository.findById(id);       //findById hat Option, dass Rückgabewert auch null sein kein
-        return customerEntity.isPresent()? transformEntity(customerEntity.get()) :null; //hier somit erst geschaut, ob Entity null, falls nicht dann transformiere
-    }                                                                                   //ansonsten gib null zurück
+        //hier optional Entity, da bei Suche nach id sonst auch NullPointerExc auftreten kann
+        //somit erst geschaut, ob Entity null, falls nicht, dann wird transformiert
+        var customerEntity = customerRepository.findById(id);
+        return customerEntity.isPresent()? transformEntity(customerEntity.get()) :null;
+    }
 
     public Customer create(CustomerManipulationRequest request) {
         var customerEntity = new CustomerEntity(request.getFirstName(), request.getLastName(), request.getAddress(),
                 request.getState(), request.getBirthday());
         customerEntity = customerRepository.save(customerEntity);
+        //nach Zeile 36 steht die id, die von der DB generiert wurde, fest (wird von save-Methode in Entity geschrieben)
         return transformEntity(customerEntity);
     }
 

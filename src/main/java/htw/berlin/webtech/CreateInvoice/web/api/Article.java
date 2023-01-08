@@ -14,6 +14,8 @@ public class Article {
         this.price = price;
     }
 
+    public Article() {}
+
     public long getId() {
         return id;
     }

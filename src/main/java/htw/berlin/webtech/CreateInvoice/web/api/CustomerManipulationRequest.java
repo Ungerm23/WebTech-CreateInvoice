@@ -18,6 +18,8 @@ public class CustomerManipulationRequest {
         this.birthday = birthday;
     }
 
+    public CustomerManipulationRequest() {}
+
     public String getFirstName() {
         return firstName;
     }

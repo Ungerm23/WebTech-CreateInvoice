@@ -34,9 +34,15 @@ public class CustomerRestController {
 
     @PostMapping(path = "/api/v1/customer")
     public ResponseEntity<Void> createCustomer(@RequestBody CustomerManipulationRequest request) throws URISyntaxException {
-        var customer = customerService.create(request);
-        URI uri = new URI("/api/v1/customer/" + customer.getId());
-        return ResponseEntity.created(uri).build();
+        var valid = validate(request);
+        if (valid) {
+            var customer = customerService.create(request);
+            URI uri = new URI("/api/v1/customer/" + customer.getId());
+            return ResponseEntity.created(uri).build();
+        }
+        else {
+            return ResponseEntity.badRequest().build();
+        }
     }
 
     @PutMapping(path = "/api/v1/customer/{id}")
@@ -50,5 +56,16 @@ public class CustomerRestController {
         boolean successful = customerService.deleteById(id);
         //Rückgabe von ok, wenn löschen geklappt hat, notfound, wenn keine Ressource zur ID gefunden wurde
         return successful? ResponseEntity.ok().build() : ResponseEntity.notFound().build();
+    }
+
+    private boolean validate(CustomerManipulationRequest request) {
+        return request.getFirstName() != null
+                && !request.getFirstName().isBlank()
+                && request.getLastName() != null
+                && !request.getLastName().isBlank()
+                && request.getAddress() != null
+                && !request.getAddress().isBlank()
+                && request.getState() != null
+                && !request.getState().isBlank();
     }
 }

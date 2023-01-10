@@ -1,0 +1,37 @@
+http://localhost:8080/h2-console
+jdbc:h2:file:C:\Users\Mark\Documents\1_Studium\3_Semester\B3_1_Webtechnologien\Projekt\WebTech-CreateInvoice\database
+
+insert into customer(id, address, birthday, first_name, last_name, state)
+VALUES (1,'Treskowallee 4', '1997-03-01', 'Max', 'Mustermeier', 'Berlin'),
+       (2,'Unter den Linden 1', '1993-06-07', 'Martina', 'Mustermann', 'München'),
+       (3,'Dorfstr. 27', null, 'Adrian', 'Ademi', 'Hamburg'),
+       (4,'Hauptstr. 3', '1968-10-10', 'Dilan', 'Ertogrul', 'Chemnitz'),
+       (5,'Amselweg 134', '1979-09-23', 'Duc', 'Nguyen', 'Stuttgart'),
+       (6,'Karl-Marx-Allee 127', null, 'Matthias', 'Keller', 'Dresden'),
+       (7,'Rhinstr. 87', '2001-09-23', 'Marie', 'Schneider', 'Düsseldorf'),
+       (8,'Berliner Allee 43', null, 'Alexander', 'Kruse', 'Dortmund'),
+       (9,'Schulstr. 14', null, 'Faton', 'Duraj', 'Nürnberg'),
+       (10,'Goethestr. 86', '1992-10-01', 'Sabine', 'Krause', 'Köln');
+
+insert into article(id, article_name, price)
+values (1, 'Fußball Gr. 5', 29.99),
+       (2, 'Fußball Gr. 4', 19.99),
+       (3, 'Basketball Gr. 7', 29.99),
+       (4, 'Basketball Gr. 6', 19.99),
+       (5, 'Volleyball Gr. 5', 24.99),
+       (6, 'Volleyball Gr. 4', 14.99),
+       (7, 'Handball Gr. 3', 19.99),
+       (8, 'Handball Gr. 2', 14.99),
+       (9, 'Handball Gr. 1', 9.99),
+       (10, 'Tennisball 3er Set', 19.99),
+       (11, 'Golfball 3er Set', 9.99),
+       (12, 'Football Gr. 9', 29.99),
+       (13, 'Football Gr. 8', 24.99),
+       (14, 'Football Gr. 7', 19.99),
+       (15, 'T-Shirt schwarz', 19.95),
+       (16, 'T-Shirt weiss', 19.95),
+       (17, 'Shorts schwarz', 14.95),
+       (18, 'Shorts weiss', 14.95),
+       (19, 'Socken schwarz 3er Set', 9.99),
+       (20, 'Socken weiss 3er Set', 9.99);
+
